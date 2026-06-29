@@ -1,0 +1,132 @@
+.certs {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(180deg, transparent, rgba(0, 229, 255, 0.025), transparent);
+}
+
+.heading {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.sub {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 3.5rem;
+  max-width: 500px;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.75rem 2rem;
+  position: relative;
+}
+
+/* Left timeline */
+.cardLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 0;
+}
+
+.iconBadge {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--cert-color, #00e5ff) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cert-color, #00e5ff) 25%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cert-color, #00e5ff);
+  flex-shrink: 0;
+}
+
+.line {
+  width: 1px;
+  flex: 1;
+  min-height: 20px;
+  margin-top: 6px;
+}
+
+/* Card body */
+.cardBody {
+  flex: 1;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.issuer {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+}
+
+.date {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.topic {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  padding: 0.25rem 0.6rem;
+  background: color-mix(in srgb, var(--cert-color, #00e5ff) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cert-color, #00e5ff) 18%, transparent);
+  border-radius: 4px;
+  color: color-mix(in srgb, var(--cert-color, #00e5ff) 80%, white);
+  letter-spacing: 0.03em;
+}
+
+.extLink {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-top: 2px;
+  opacity: 0;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.card:hover .extLink {
+  opacity: 1;
+  color: var(--accent-cyan);
+}
+
+@media (max-width: 600px) {
+  .card { padding: 1.25rem; gap: 1rem; }
+  .extLink { display: none; }
+}
