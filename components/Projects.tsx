@@ -27,7 +27,7 @@ const projects = [
       'FastAPI + MongoDB real-time inference service',
     ],
     tech: ['Python', 'Scikit-learn', 'MongoDB', 'FastAPI', 'MLflow', 'Docker', 'AWS', 'GitHub Actions'],
-    github: 'https://github.com/JohanKarkaria',
+    github: 'https://github.com/johankarkaria/network_intrusion_detection_system',
   },
   {
     id: 'summarizer',
@@ -50,7 +50,7 @@ const projects = [
       'Docker + Flask inference service with strict latency target',
     ],
     tech: ['PyTorch', 'HuggingFace Transformers', 'Pegasus', 'Flask', 'Docker', 'Google Colab T4'],
-    github: 'https://github.com/JohanKarkaria',
+    github: 'https://github.com/johankarkaria/text_summarizer',
   },
   {
     id: 'student-perf',
@@ -73,7 +73,7 @@ const projects = [
       'Automated CI/CD reducing manual deployment effort to zero',
     ],
     tech: ['Python', 'CatBoost', 'Flask', 'Docker', 'AWS Elastic Beanstalk', 'GitHub Actions'],
-    github: 'https://github.com/JohanKarkaria',
+    github: 'https://github.com/johankarkaria/student_performance_project',
   },
 ];
 
