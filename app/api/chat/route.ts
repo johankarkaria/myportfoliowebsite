@@ -115,9 +115,11 @@ export async function POST(req: NextRequest) {
 
     // ── Free model cascade: tries each in order, skips on 429 ──────
     const FREE_MODELS = [
-      'meta-llama/llama-3.3-70b-instruct:free',  // primary — best quality
-      'openai/gpt-oss-120b:free',                 // fallback 1
-      'nvidia/nemotron-3-ultra-550b-a55b:free',   // fallback 2 — 1M ctx
+      'meta-llama/llama-3.3-70b-instruct:free',   // primary — best quality
+      'qwen/qwen3-next-80b-a3b-instruct:free',    // fallback 1 — strong 80B model
+      'google/gemma-4-31b-it:free',               // fallback 2 — Google Gemma 4
+      'nvidia/nemotron-3-ultra-550b-a55b:free',   // fallback 3 — 1M ctx
+      'nousresearch/hermes-3-llama-3.1-405b:free',// fallback 4 — 405B
     ];
 
     const reqHeaders: HeadersInit = {
@@ -147,8 +149,8 @@ export async function POST(req: NextRequest) {
         body: JSON.stringify({ model, ...basePayload }),
       });
 
-      if (attempt.status === 429) {
-        console.log(`[chat] ${model} rate-limited — trying next model...`);
+      if (attempt.status === 429 || attempt.status === 404) {
+        console.log(`[chat] ${model} unavailable (${attempt.status}) — trying next model...`);
         continue;
       }
 
